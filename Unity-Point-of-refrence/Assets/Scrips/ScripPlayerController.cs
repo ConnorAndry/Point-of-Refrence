@@ -10,6 +10,16 @@ public class ScripPlayerController : MonoBehaviour
 
     Vector2 camRotation;
 
+    public Transform WeaponSlot;
+
+    [Header("Player Stats")]
+    public int maxHealth = 5;
+    public int health = 5;
+    public int healthRestore = 1;
+
+    [Header("Weapon Stats")]
+    public bool canFire = true;
+
     public bool sprintMode = false;
 
     [Header("Movement Settings")]
@@ -83,6 +93,30 @@ public class ScripPlayerController : MonoBehaviour
             temp.y = jumpHeight;
 
         myRB.velocity = (temp.x * transform.forward) + (temp.z * transform.right) + (temp.y * transform.up);
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if ((health < maxHealth) && collision.gameObject.tag == "Health Pickup")
+        {
+            health += healthRestore;
+
+            if (health > maxHealth)
+                health = maxHealth;
+
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "weapon")
+            collision.gameObject.transform.SetParent(WeaponSlot);
+    }
+
+
+    IEnumerator cooldown(float time)
+    {
+        yield return new WaitForSeconds(time);
+        canFire = true;
 
     }
 }
