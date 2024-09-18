@@ -18,6 +18,8 @@ public class ScripPlayerController : MonoBehaviour
     public int healthRestore = 1;
 
     [Header("Weapon Stats")]
+    public GameObject shot;
+    public float shotSpeed = 0;
     public int weaponID = 0;
     public int fireMode = 0;
     public float fireRate = 0;
@@ -26,6 +28,7 @@ public class ScripPlayerController : MonoBehaviour
     public float maxAmmo = 0;
     public float currentAmmo = 0;
     public float reloadAmt = 0;
+    public float shotLifeSpan = 0;
     public bool canFire = true;
 
 
@@ -65,8 +68,12 @@ public class ScripPlayerController : MonoBehaviour
         playercam.transform.localRotation = Quaternion.AngleAxis(camRotation.y, Vector3.left);
         transform.localRotation = Quaternion.AngleAxis(camRotation.x, Vector3.up);
 
-        if (Input.GetMouseButtonDown(0) && canFire && currentClip > 0)
+        if (Input.GetMouseButtonDown(0) && canFire && currentClip > 0 && weaponID >= 0)
         {
+            GameObject s = Instantiate(shot, WeaponSlot.position, WeaponSlot.rotation);
+            s.GetComponent<Rigidbody>().AddForce(playercam.transform.forward * shotSpeed);
+            Destroy(s,shotLifeSpan);
+
             canFire = false;
             currentClip--;
             StartCoroutine("cooldownFire");
@@ -125,7 +132,9 @@ public class ScripPlayerController : MonoBehaviour
             switch (other.gameObject.name)
             {
                 case "Weapon 1":
+
                     weaponID = 0;
+                    shotSpeed = 15000;
                     fireMode = 0;
                     fireRate = 0.25f;
                     currentClip = 20;
@@ -133,6 +142,7 @@ public class ScripPlayerController : MonoBehaviour
                     maxAmmo = 400;
                     currentAmmo = 200;
                     reloadAmt = 20;
+                    shotLifeSpan = 1;
                     break;
 
                 default:

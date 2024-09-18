@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Health Pickup
   - Weapon
+  - Shot
+  - basicEnamy
   layers:
   - Default
   - TransparentFX
