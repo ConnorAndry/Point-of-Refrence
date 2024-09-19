@@ -20,12 +20,12 @@ public class BasicEnamyController : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Shot")
         {
             Destroy(collision.gameObject);
-            health--;
+            health --;
         }
     }
 }
