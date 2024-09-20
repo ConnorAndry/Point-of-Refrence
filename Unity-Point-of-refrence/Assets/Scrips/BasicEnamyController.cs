@@ -18,9 +18,7 @@ public class BasicEnamyController : MonoBehaviour
     {
         if (health <= 0)
             Destroy(gameObject);
-            GameObject h = Instantiate
-
-
+        
     }
 
     private void OnTriggerEnter(Collider collision)
