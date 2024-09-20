@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BasicEnamyController : MonoBehaviour
 {
-    public int health = 3;
-    public int maxHealth = 3;
+    public int health = 30;
+    public int maxHealth = 30;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,9 @@ public class BasicEnamyController : MonoBehaviour
     {
         if (health <= 0)
             Destroy(gameObject);
+            GameObject h = Instantiate
+
+
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -25,7 +28,9 @@ public class BasicEnamyController : MonoBehaviour
         if (collision.gameObject.tag == "Shot")
         {
             Destroy(collision.gameObject);
-            health --;
+            health -= 5;
         }
     }
+
+   
 }

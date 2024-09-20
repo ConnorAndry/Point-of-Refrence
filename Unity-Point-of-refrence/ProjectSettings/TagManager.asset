@@ -8,6 +8,8 @@ TagManager:
   - Weapon
   - Shot
   - basicEnamy
+  - Health buff
+  - Boss
   layers:
   - Default
   - TransparentFX
