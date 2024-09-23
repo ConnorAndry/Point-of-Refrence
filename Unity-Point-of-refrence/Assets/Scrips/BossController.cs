@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnamyController : MonoBehaviour
+public class BossController : MonoBehaviour
 {
-    public Transform Enamy;
+    public Transform Boss;
 
-    public GameObject healthPickup;
-   
-    public int health = 3;
-    public int maxHealth = 3;
+    public GameObject healthBuff;
+
+
+    public int health = 10;
+    public int maxHealth = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +22,8 @@ public class BasicEnamyController : MonoBehaviour
     void Update()
     {
         if (health <= 0)
-        {
             Destroy(gameObject);
-            GameObject p = Instantiate(healthPickup, Enamy.position, Enamy.rotation);
-        }
+            GameObject p = Instantiate(healthBuff, Boss.position, Boss.rotation);
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -38,11 +37,11 @@ public class BasicEnamyController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Health Pickup")
+        if (collision.gameObject.tag == "Health buff")
         {
-            collision.gameObject.transform.position = Enamy.position;
+            collision.gameObject.transform.position = Boss.position;
 
-            collision.gameObject.transform.SetParent(Enamy);
+            collision.gameObject.transform.SetParent(Boss);
         }
     }
 }

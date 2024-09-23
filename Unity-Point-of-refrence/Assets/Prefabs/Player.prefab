@@ -279,6 +279,7 @@ MonoBehaviour:
   maxHealth: 5
   health: 5
   healthRestore: 1
+  healthAdd: 2
   shot: {fileID: 0}
   shotSpeed: 15
   weaponID: 0

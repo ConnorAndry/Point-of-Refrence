@@ -13,10 +13,10 @@ public class ScripPlayerController : MonoBehaviour
     public Transform WeaponSlot;
 
     [Header("Player Stats")]
-    public int maxHealth = 100;
-    public int health = 100;
-    public int healthRestore = 10;
-    public int healthAdd = 25;
+    public int maxHealth = 5;
+    public int health = 5;
+    public int healthRestore = 1;
+    public int healthAdd = 2;
 
     [Header("Weapon Stats")]
     public GameObject shot;
