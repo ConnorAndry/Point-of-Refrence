@@ -8,6 +8,7 @@ public class ScripPlayerController : MonoBehaviour
     private Rigidbody myRB;
     Camera playercam;
 
+    Transform cameraHolder;
     Vector2 camRotation;
 
     public Transform WeaponSlot;
@@ -51,7 +52,8 @@ public class ScripPlayerController : MonoBehaviour
     void Start()
     {
         myRB = GetComponent<Rigidbody>();
-        playercam = transform.GetChild(0).GetComponent<Camera>();
+        playercam = Camera.main;
+        cameraHolder = transform.GetChild(0);
 
         camRotation = Vector2.zero;
         Cursor.visible = false;
@@ -61,12 +63,14 @@ public class ScripPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playercam.transform.position = cameraHolder.position;
+
         camRotation.x += Input.GetAxisRaw("Mouse X") * mouseSensitivity;
         camRotation.y += Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
 
         camRotation.y = Mathf.Clamp(camRotation.y, -camRotationLimit, camRotationLimit);
 
-        playercam.transform.localRotation = Quaternion.AngleAxis(camRotation.y, Vector3.left);
+        playercam.transform.rotation = Quaternion.Euler(-camRotation.y, camRotation.x, 0);
         transform.localRotation = Quaternion.AngleAxis(camRotation.x, Vector3.up);
 
         if (Input.GetMouseButtonDown(0) && canFire && currentClip > 0 && weaponID >= 0)
