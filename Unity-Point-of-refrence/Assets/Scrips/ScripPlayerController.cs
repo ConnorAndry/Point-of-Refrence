@@ -13,6 +13,8 @@ public class ScripPlayerController : MonoBehaviour
 
     public Transform WeaponSlot;
 
+    public int damageRecieved = 1;
+
     [Header("Player Stats")]
     public int maxHealth = 5;
     public int health = 5;
@@ -215,6 +217,15 @@ public class ScripPlayerController : MonoBehaviour
                 currentAmmo -= reloadCount;
                 return;
             }
+        }
+    }
+
+    private void onCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "basicEnamy")
+        {
+            health -= damageRecieved;
+            Destroy(collision.gameObject);
         }
     }
 

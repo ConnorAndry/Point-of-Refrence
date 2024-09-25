@@ -17,6 +17,7 @@ public class BasicEnamyController : MonoBehaviour
     public int damageGivin = 1;
     public int damageRecieved = 1;
     public float pushBackForce = 10000;
+    public int playerDistance = 30;
     
 
     // Start is called before the first frame update
@@ -29,8 +30,10 @@ public class BasicEnamyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        agent.destination = player.transform.position;
+        
+
+        if (Physics.Raycast(transform.position, transform.up, playerDistance)) 
+            agent.destination = player.transform.position;
 
         if (health <= 0)
         {

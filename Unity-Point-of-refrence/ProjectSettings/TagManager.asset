@@ -10,6 +10,7 @@ TagManager:
   - basicEnamy
   - Health buff
   - Boss
+  - Wall
   layers:
   - Default
   - TransparentFX
