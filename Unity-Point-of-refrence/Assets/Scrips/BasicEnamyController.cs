@@ -11,6 +11,8 @@ public class BasicEnamyController : MonoBehaviour
     public NavMeshAgent agent;
 
     public GameObject healthPickup;
+
+    public GameObject AmmoPickup;
    
     public int maxHealth = 5;
     public int health = 3;
@@ -30,15 +32,16 @@ public class BasicEnamyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
-        if (Physics.Raycast(transform.position, transform.up, playerDistance)) 
+        if (health <= 2)
             agent.destination = player.transform.position;
+
 
         if (health <= 0)
         {
             Destroy(gameObject);
             GameObject p = Instantiate(healthPickup, Enamy.position, Enamy.rotation);
+            GameObject a = Instantiate(AmmoPickup, Enamy.position, Enamy.rotation);
         }
     }
 
@@ -59,5 +62,14 @@ public class BasicEnamyController : MonoBehaviour
 
             collision.gameObject.transform.SetParent(Enamy);
         }
+
+        if (collision.gameObject.tag == "Ammo Pickup")
+        {
+            collision.gameObject.transform.position = Enamy.position;
+
+            collision.gameObject.transform.SetParent(Enamy);
+        }
     }
+
+   
 }

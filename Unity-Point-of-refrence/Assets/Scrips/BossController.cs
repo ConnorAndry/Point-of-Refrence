@@ -6,11 +6,11 @@ public class BossController : MonoBehaviour
 {
     public Transform Boss;
 
-    public GameObject healthBuff;
+    public GameObject Healthbuff;
 
 
-    public int health = 10;
-    public int maxHealth = 10;
+    public int health = 50;
+    public int maxHealth = 50;
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +22,11 @@ public class BossController : MonoBehaviour
     void Update()
     {
         if (health <= 0)
+        {
             Destroy(gameObject);
-            GameObject p = Instantiate(healthBuff, Boss.position, Boss.rotation);
+            GameObject h = Instantiate(Healthbuff, Boss.position, Boss.rotation);
+        }
     }
-
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Shot")

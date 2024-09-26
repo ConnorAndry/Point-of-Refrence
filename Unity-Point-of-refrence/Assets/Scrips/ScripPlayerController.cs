@@ -125,7 +125,6 @@ public class ScripPlayerController : MonoBehaviour
             temp.y = jumpHeight;
 
         myRB.velocity = (temp.x * transform.forward) + (temp.z * transform.right) + (temp.y * transform.up);
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -146,7 +145,7 @@ public class ScripPlayerController : MonoBehaviour
                     fireRate = 0.25f;
                     currentClip = 20;
                     clipSize = 20;
-                    maxAmmo = 400;
+                    maxAmmo = 200;
                     currentAmmo = 200;
                     reloadAmt = 20;
                     shotLifeSpan = 1;
@@ -156,7 +155,6 @@ public class ScripPlayerController : MonoBehaviour
                     break;
             }
         }
-       
 
 
     }
@@ -180,17 +178,20 @@ public class ScripPlayerController : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if ((currentAmmo < maxAmmo) && collision.gameObject.tag == "AmmoPickup")
+        if ((currentAmmo < maxAmmo) && collision.gameObject.tag == "Ammo Pickup")
         {
             currentAmmo += reloadAmt;
 
-            if (currentAmmo > maxAmmo)
+            if (currentAmmo < maxAmmo)
                 currentAmmo = maxAmmo;
 
             Destroy(collision.gameObject);
         }
 
-        
+        if (collision.gameObject.tag == "basicEnamy")
+        {
+            health -= 1;
+        }
     }
 
     public void reloadClip()
