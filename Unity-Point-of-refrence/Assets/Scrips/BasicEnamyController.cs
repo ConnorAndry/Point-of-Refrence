@@ -14,12 +14,13 @@ public class BasicEnamyController : MonoBehaviour
 
     public GameObject AmmoPickup;
    
-    public int maxHealth = 5;
-    public int health = 3;
+    public int maxHealth = 15;
+    public int health = 15;
     public int damageGivin = 1;
     public int damageRecieved = 1;
     public float pushBackForce = 10000;
-    public int playerDistance = 30;
+    public int playerDistance = 50;
+    
     
 
     // Start is called before the first frame update
@@ -33,9 +34,9 @@ public class BasicEnamyController : MonoBehaviour
     void Update()
     {
 
-        if (health <= 2)
+        
+        if (health < maxHealth)
             agent.destination = player.transform.position;
-
 
         if (health <= 0)
         {
@@ -54,6 +55,8 @@ public class BasicEnamyController : MonoBehaviour
         }
     }
 
+    
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Health Pickup")
@@ -69,7 +72,14 @@ public class BasicEnamyController : MonoBehaviour
 
             collision.gameObject.transform.SetParent(Enamy);
         }
+
+        if (collision.gameObject.tag == "key")
+            collision.gameObject.transform.position = Enamy.position;
+
+            collision.gameObject.transform.SetParent(Enamy);
     }
+
+
 
    
 }

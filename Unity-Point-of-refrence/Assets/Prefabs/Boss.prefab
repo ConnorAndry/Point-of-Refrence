@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7758267819386226113}
   - component: {fileID: 126292154503215484}
   - component: {fileID: 2537933231230957368}
+  - component: {fileID: 9217119406137012842}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -121,6 +122,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boss: {fileID: 1263221354543215850}
+  player: {fileID: 0}
+  agent: {fileID: 0}
   Healthbuff: {fileID: 8286334307111402267, guid: a92939fcf40ce294691817f83ef015af, type: 3}
   health: 50
   maxHealth: 50
+--- !u!195 &9217119406137012842
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6986590930963589118}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 6
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

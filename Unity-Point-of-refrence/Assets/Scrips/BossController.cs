@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BossController : MonoBehaviour
 {
     public Transform Boss;
+
+    public ScripPlayerController player;
+    public NavMeshAgent agent;
 
     public GameObject Healthbuff;
 
@@ -15,12 +19,17 @@ public class BossController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player").GetComponent<ScripPlayerController>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (health < maxHealth)
+            agent.destination = player.transform.position;
+
         if (health <= 0)
         {
             Destroy(gameObject);

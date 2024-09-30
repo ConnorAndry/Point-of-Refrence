@@ -12,6 +12,8 @@ TagManager:
   - Boss
   - Wall
   - Ammo Pickup
+  - door
+  - key
   layers:
   - Default
   - TransparentFX

@@ -16,10 +16,10 @@ public class ScripPlayerController : MonoBehaviour
     public int damageRecieved = 1;
 
     [Header("Player Stats")]
-    public int maxHealth = 5;
-    public int health = 5;
-    public int healthRestore = 1;
-    public int healthAdd = 2;
+    public int maxHealth = 25;
+    public int health = 25;
+    public int healthRestore = 5;
+    public int healthAdd = 10;
 
     [Header("Weapon Stats")]
     public GameObject shot;
@@ -191,6 +191,11 @@ public class ScripPlayerController : MonoBehaviour
         if (collision.gameObject.tag == "basicEnamy")
         {
             health -= 1;
+        }
+
+        if (collision.gameObject.tag == "Boss")
+        {
+            health -= 5;
         }
     }
 
