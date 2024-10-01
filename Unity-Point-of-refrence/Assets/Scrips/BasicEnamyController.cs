@@ -73,10 +73,7 @@ public class BasicEnamyController : MonoBehaviour
             collision.gameObject.transform.SetParent(Enamy);
         }
 
-        if (collision.gameObject.tag == "key")
-            collision.gameObject.transform.position = Enamy.position;
-
-            collision.gameObject.transform.SetParent(Enamy);
+        
     }
 
 
