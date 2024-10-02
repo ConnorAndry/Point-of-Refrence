@@ -9,6 +9,7 @@ public class ScripPlayerController : MonoBehaviour
     Camera playercam;
 
     Transform cameraHolder;
+    
     Vector2 camRotation;
 
     public Transform WeaponSlot;
@@ -70,9 +71,6 @@ public class ScripPlayerController : MonoBehaviour
     {
         if (!gm.isPaused)
         {
-
-
-
             playercam.transform.position = cameraHolder.position;
 
             camRotation.x += Input.GetAxisRaw("Mouse X") * mouseSensitivity;
@@ -183,6 +181,7 @@ public class ScripPlayerController : MonoBehaviour
        if ((health <= maxHealth) && collision.gameObject.tag == "Health buff")
         {
             maxHealth += healthAdd;
+            health += healthAdd;
 
             Destroy(collision.gameObject);
         }
@@ -205,6 +204,12 @@ public class ScripPlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Boss")
         {
             health -= 5;
+        }
+
+        if (collision.gameObject.tag == "Door")
+        {
+            Destroy(collision.gameObject);
+
         }
     }
 

@@ -14,6 +14,7 @@ TagManager:
   - Ammo Pickup
   - door
   - key
+  - Door Enamy
   layers:
   - Default
   - TransparentFX

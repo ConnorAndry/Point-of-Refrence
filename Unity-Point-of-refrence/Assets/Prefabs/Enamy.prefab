@@ -128,12 +128,12 @@ MonoBehaviour:
   agent: {fileID: 0}
   healthPickup: {fileID: 6826020778337471743, guid: e0961d28d85902f4fa11c9d4058b92f1, type: 3}
   AmmoPickup: {fileID: 9205007964537028906, guid: e5256e249afb8f747b67c4c97dae0ef6, type: 3}
+  Doorkey: {fileID: 1700985722237843782, guid: 74cf38ad34e0e9e4697ad6b29dad33a3, type: 3}
   maxHealth: 15
   health: 15
   damageGivin: 1
   damageRecieved: 1
   pushBackForce: 10000
-  playerDistance: 30
 --- !u!195 &5124307920806027654
 NavMeshAgent:
   m_ObjectHideFlags: 0

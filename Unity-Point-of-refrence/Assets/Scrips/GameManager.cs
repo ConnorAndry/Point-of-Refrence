@@ -21,45 +21,48 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerData = GameObject.Find("Player").GetComponent<ScripPlayerController>();
-
-        
+        if (SceneManager.GetActiveScene().buildIndex > 0)
+            playerData = GameObject.Find("Player").GetComponent<ScripPlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = Mathf.Clamp((float) playerData.health / (float) playerData.maxHealth, 0, 1);
-
-        if (playerData.weaponID < 0)
+        if (SceneManager.GetActiveScene().buildIndex > 0)
         {
-            clipCounter.gameObject.SetActive(false);
-            ammoCounter.gameObject.SetActive(false);
-        }
-        else
-        {
-            clipCounter.gameObject.SetActive(true);
-            ammoCounter.gameObject.SetActive(true);
+            healthBar.fillAmount = Mathf.Clamp((float)playerData.health / (float)playerData.maxHealth, 0, 1);
 
-            clipCounter.text = "Clip: " + playerData.currentClip + "/" + playerData.clipSize;
-            ammoCounter.text = "Ammo: " + playerData.currentAmmo;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (!isPaused)
+            if (playerData.weaponID < 0)
             {
-                pauseMenu.SetActive(true);
-
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-
-                Time.timeScale = 0;
-
-                isPaused = true;
+                clipCounter.gameObject.SetActive(false);
+                ammoCounter.gameObject.SetActive(false);
             }
             else
-                Resume();
+            {
+                clipCounter.gameObject.SetActive(true);
+                ammoCounter.gameObject.SetActive(true);
+
+                clipCounter.text = "Clip: " + playerData.currentClip + "/" + playerData.clipSize;
+                ammoCounter.text = "Ammo: " + playerData.currentAmmo;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (!isPaused)
+                {
+                    pauseMenu.SetActive(true);
+
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+
+                    Time.timeScale = 0;
+
+                    isPaused = true;
+                }
+                else
+                    Resume();
+            }
+
         }
 
         

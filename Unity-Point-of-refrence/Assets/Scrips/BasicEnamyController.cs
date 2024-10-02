@@ -19,7 +19,6 @@ public class BasicEnamyController : MonoBehaviour
     public int damageGivin = 1;
     public int damageRecieved = 1;
     public float pushBackForce = 10000;
-    public int playerDistance = 50;
     
     
 
@@ -44,6 +43,8 @@ public class BasicEnamyController : MonoBehaviour
             GameObject p = Instantiate(healthPickup, Enamy.position, Enamy.rotation);
             GameObject a = Instantiate(AmmoPickup, Enamy.position, Enamy.rotation);
         }
+
+
     }
 
     private void OnTriggerEnter(Collider collision)
