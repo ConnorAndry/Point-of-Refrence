@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class BasicEnamyController : MonoBehaviour
 {
-    public Transform Enamy;
+    public Transform Enemy1;
 
     public ScripPlayerController player;
     public NavMeshAgent agent;
@@ -40,8 +40,8 @@ public class BasicEnamyController : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            GameObject p = Instantiate(healthPickup, Enamy.position, Enamy.rotation);
-            GameObject a = Instantiate(AmmoPickup, Enamy.position, Enamy.rotation);
+            GameObject p = Instantiate(healthPickup, Enemy1.position, Enemy1.rotation);
+            GameObject a = Instantiate(AmmoPickup, Enemy1.position, Enemy1.rotation);
         }
 
 
@@ -62,16 +62,16 @@ public class BasicEnamyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Health Pickup")
         {
-            collision.gameObject.transform.position = Enamy.position;
+            collision.gameObject.transform.position = Enemy1.position;
 
-            collision.gameObject.transform.SetParent(Enamy);
+            collision.gameObject.transform.SetParent(Enemy1);
         }
 
         if (collision.gameObject.tag == "Ammo Pickup")
         {
-            collision.gameObject.transform.position = Enamy.position;
+            collision.gameObject.transform.position = Enemy1.position;
 
-            collision.gameObject.transform.SetParent(Enamy);
+            collision.gameObject.transform.SetParent(Enemy1);
         }
 
         

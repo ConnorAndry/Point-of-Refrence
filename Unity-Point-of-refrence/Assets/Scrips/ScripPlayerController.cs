@@ -206,7 +206,7 @@ public class ScripPlayerController : MonoBehaviour
             health -= 5;
         }
 
-        if (collision.gameObject.tag == "Door")
+        if (collision.gameObject.tag == "door")
         {
             Destroy(collision.gameObject);
 
