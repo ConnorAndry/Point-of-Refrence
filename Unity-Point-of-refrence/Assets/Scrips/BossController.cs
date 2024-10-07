@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class BossController : MonoBehaviour
 {
-    public Transform Boss;
+    public Transform GhostBoss1;
 
     public ScripPlayerController player;
     public NavMeshAgent agent;
@@ -33,7 +33,7 @@ public class BossController : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            GameObject h = Instantiate(Healthbuff, Boss.position, Boss.rotation);
+            GameObject h = Instantiate(Healthbuff, GhostBoss1.position, GhostBoss1.rotation);
         }
     }
     private void OnTriggerEnter(Collider collision)
@@ -49,9 +49,9 @@ public class BossController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Health buff")
         {
-            collision.gameObject.transform.position = Boss.position;
+            collision.gameObject.transform.position = GhostBoss1.position;
 
-            collision.gameObject.transform.SetParent(Boss);
+            collision.gameObject.transform.SetParent(GhostBoss1);
         }
     }
 }
