@@ -1440,10 +1440,10 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 3
-  m_BaseOffset: 1.3978882
+  m_BaseOffset: 3.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &673113546
+--- !u!65 &673113551
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1462,7 +1462,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.5634515, y: 6, z: 2.106274}
+  m_Size: {x: 2.5634515, y: 5.061884, z: 2.106274}
   m_Center: {x: 0.009887576, y: -1.1330538, z: -0.014220834}
 --- !u!1 &705507993
 GameObject:
@@ -4977,6 +4977,10 @@ PrefabInstance:
       value: Ghost Boss 1
       objectReference: {fileID: 0}
     - target: {fileID: 4600611047312271798, guid: 20cd57ee1bfb6f448a26b6716b1f096a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600611047312271798, guid: 20cd57ee1bfb6f448a26b6716b1f096a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
       objectReference: {fileID: 0}
@@ -5022,10 +5026,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3788503600372216588, guid: 20cd57ee1bfb6f448a26b6716b1f096a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 673113546}
+      addedObject: {fileID: 673113545}
     - targetCorrespondingSourceObject: {fileID: 3788503600372216588, guid: 20cd57ee1bfb6f448a26b6716b1f096a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 673113545}
+      addedObject: {fileID: 673113551}
   m_SourcePrefab: {fileID: 100100000, guid: 20cd57ee1bfb6f448a26b6716b1f096a, type: 3}
 --- !u!1001 &9094228907676534644
 PrefabInstance:
