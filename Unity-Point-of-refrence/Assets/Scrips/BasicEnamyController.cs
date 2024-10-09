@@ -10,9 +10,9 @@ public class BasicEnamyController : MonoBehaviour
     public ScripPlayerController player;
     public NavMeshAgent agent;
 
-    public GameObject healthPickup;
+    public GameObject Health;
 
-    public GameObject AmmoPickup;
+    public GameObject Ammo;
    
     public int maxHealth = 15;
     public int health = 15;
@@ -40,8 +40,8 @@ public class BasicEnamyController : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            GameObject p = Instantiate(healthPickup, Enemy1.position, Enemy1.rotation);
-            GameObject a = Instantiate(AmmoPickup, Enemy1.position, Enemy1.rotation);
+            GameObject p = Instantiate(Health, Enemy1.position, Enemy1.rotation);
+            GameObject a = Instantiate(Ammo, Enemy1.position, Enemy1.rotation);
         }
 
 

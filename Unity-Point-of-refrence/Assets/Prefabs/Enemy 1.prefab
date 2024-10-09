@@ -145,8 +145,8 @@ MonoBehaviour:
   Enemy1: {fileID: 6515071037795962779}
   player: {fileID: 0}
   agent: {fileID: 0}
-  healthPickup: {fileID: 6826020778337471743, guid: e0961d28d85902f4fa11c9d4058b92f1, type: 3}
-  AmmoPickup: {fileID: 9205007964537028906, guid: e5256e249afb8f747b67c4c97dae0ef6, type: 3}
+  Health: {fileID: 2582231455653798961, guid: 690a9f6dd951b094ebc5b976a29f33e3, type: 3}
+  Ammo: {fileID: 6466338193334256674, guid: 2e94937922a0fc5479b806d8c26c13ac, type: 3}
   maxHealth: 15
   health: 15
   damageGivin: 1

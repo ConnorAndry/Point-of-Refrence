@@ -144,7 +144,7 @@ public class ScripPlayerController : MonoBehaviour
 
             switch (other.gameObject.name)
             {
-                case "Weapon 1":
+                case "Weapon":
 
                     weaponID = 0;
                     shotSpeed = 15000;
