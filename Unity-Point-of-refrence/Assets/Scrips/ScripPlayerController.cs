@@ -23,6 +23,7 @@ public class ScripPlayerController : MonoBehaviour
     public int health = 25;
     public int healthRestore = 5;
     public int healthAdd = 10;
+    public bool inAir = true;
 
     [Header("Weapon Stats")]
     public GameObject shot;
@@ -43,7 +44,7 @@ public class ScripPlayerController : MonoBehaviour
     public float speed = 10.0f;
     public float jumpHeight = 5.0f;
     public float SprintMultplyer = 2.5f;
-    public float groundDetectDistance = 1.0f;
+    public float groundDetectDistance = 4.25f;
     public bool sprintMode = false;
 
     [Header("User Settings")]
@@ -127,8 +128,19 @@ public class ScripPlayerController : MonoBehaviour
             temp.z = horizonralMove * speed;
 
 
-            if (Input.GetKeyDown(KeyCode.Space) && Physics.Raycast(transform.position, -transform.up, groundDetectDistance))
+            if (Input.GetKeyDown(KeyCode.Space) && !inAir) 
+            {
                 temp.y = jumpHeight;
+            }
+            
+            if (Physics.Raycast(transform.position, -transform.up, groundDetectDistance))
+            {
+                inAir = false;
+            }
+            else
+            {
+                inAir = true;
+            }
 
             myRB.velocity = (temp.x * transform.forward) + (temp.z * transform.right) + (temp.y * transform.up);
         }
