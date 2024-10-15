@@ -26,6 +26,7 @@ public class ScripPlayerController : MonoBehaviour
     public bool inAir = true;
 
     [Header("Weapon Stats")]
+    public AudioSource weaponSpeaker;
     public GameObject shot;
     public float shotSpeed = 0;
     public int weaponID = 0;
@@ -38,7 +39,15 @@ public class ScripPlayerController : MonoBehaviour
     public float reloadAmt = 0;
     public float shotLifeSpan = 0;
     public bool canFire = true;
+   
 
+    [Header("Ammo Counts")]
+    public float CurrentAmmo = 0;
+    public float CurrentAmmo1 = 0;
+    public float CurrentAmmo2 = 0;
+    public float CurrentChip = 0;
+    public float CurrentChlip1 = 0;
+    public float CurrentClip2 = 0;
 
     [Header("Movement Settings")]
     public float speed = 10.0f;
@@ -84,6 +93,7 @@ public class ScripPlayerController : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && canFire && currentClip > 0 && weaponID >= 0)
             {
+                weaponSpeaker.Play();
                 GameObject s = Instantiate(shot, WeaponSlot.position, WeaponSlot.rotation);
                 s.GetComponent<Rigidbody>().AddForce(playercam.transform.forward * shotSpeed);
                 Destroy(s, shotLifeSpan);
@@ -150,13 +160,17 @@ public class ScripPlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Weapon")
         {
+            weaponSpeaker = other.gameObject.GetComponent<AudioSource>();
+
             other.gameObject.transform.position = WeaponSlot.position;
 
             other.gameObject.transform.SetParent(WeaponSlot);
 
             switch (other.gameObject.name)
             {
-                case "Weapon":
+                case "Weapon 1":
+
+                   
 
                     weaponID = 0;
                     shotSpeed = 15000;
