@@ -93,7 +93,7 @@ public class ScripPlayerController : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && canFire && currentClip > 0 && weaponID >= 0)
             {
-                weaponSpeaker.Play();
+               
                 GameObject s = Instantiate(shot, WeaponSlot.position, WeaponSlot.rotation);
                 s.GetComponent<Rigidbody>().AddForce(playercam.transform.forward * shotSpeed);
                 Destroy(s, shotLifeSpan);
