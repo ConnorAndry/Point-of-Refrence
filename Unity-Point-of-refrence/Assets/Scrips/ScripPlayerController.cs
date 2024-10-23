@@ -16,6 +16,7 @@ public class ScripPlayerController : MonoBehaviour
 
     public GameManager gm;
 
+
     public int damageRecieved = 1;
 
     [Header("Player Stats")]
@@ -93,7 +94,7 @@ public class ScripPlayerController : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && canFire && currentClip > 0 && weaponID >= 0)
             {
-               
+                weaponSpeaker.Play();
                 GameObject s = Instantiate(shot, WeaponSlot.position, WeaponSlot.rotation);
                 s.GetComponent<Rigidbody>().AddForce(playercam.transform.forward * shotSpeed);
                 Destroy(s, shotLifeSpan);
@@ -160,11 +161,11 @@ public class ScripPlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Weapon")
         {
-            weaponSpeaker = other.gameObject.GetComponent<AudioSource>();
-
             other.gameObject.transform.position = WeaponSlot.position;
 
             other.gameObject.transform.SetParent(WeaponSlot);
+
+            weaponSpeaker = other.gameObject.GetComponent<AudioSource>();
 
             switch (other.gameObject.name)
             {
