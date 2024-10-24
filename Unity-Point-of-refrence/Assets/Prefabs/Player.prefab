@@ -153,11 +153,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponSlot: {fileID: 2817721706388048121}
   gm: {fileID: 0}
+  pickupSpeaker: {fileID: 4788777106262118880, guid: e9b41c9fd5f51bf4f9c8af195c316e8f, type: 3}
   damageRecieved: 1
   maxHealth: 25
   health: 25
   healthRestore: 5
   healthAdd: 10
+  inAir: 1
+  weaponSpeaker: {fileID: 5044000256850134674, guid: c4bc1a99f4909dc468eebec809392640, type: 3}
   shot: {fileID: 1572669285068155861, guid: c04fca42d88d3124d92e90c4903b994d, type: 3}
   shotSpeed: 15
   weaponID: 0
@@ -170,6 +173,12 @@ MonoBehaviour:
   reloadAmt: 0
   shotLifeSpan: 0
   canFire: 1
+  CurrentAmmo: 0
+  CurrentAmmo1: 0
+  CurrentAmmo2: 0
+  CurrentChip: 0
+  CurrentChlip1: 0
+  CurrentClip2: 0
   speed: 10
   jumpHeight: 5
   SprintMultplyer: 2.5

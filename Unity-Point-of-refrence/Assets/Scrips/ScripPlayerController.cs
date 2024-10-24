@@ -16,6 +16,7 @@ public class ScripPlayerController : MonoBehaviour
 
     public GameManager gm;
 
+    public AudioSource pickupSpeaker;
 
     public int damageRecieved = 1;
 
@@ -198,7 +199,7 @@ public class ScripPlayerController : MonoBehaviour
         if ((health < maxHealth) && collision.gameObject.tag == "Health Pickup")
         {
             health += healthRestore;
-
+           
             if (health > maxHealth)
                 health = maxHealth;
 

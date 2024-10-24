@@ -13,7 +13,7 @@ public class BasicEnamyController : MonoBehaviour
     public GameObject Health;
 
     public GameObject Ammo;
-   
+
     public int maxHealth = 15;
     public int health = 15;
     public int damageGivin = 1;
