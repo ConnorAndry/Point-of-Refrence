@@ -15,6 +15,7 @@ TagManager:
   - door
   - key
   - Door Enamy
+  - Next level
   layers:
   - Default
   - TransparentFX

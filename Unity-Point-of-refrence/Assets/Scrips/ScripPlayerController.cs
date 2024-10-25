@@ -187,7 +187,22 @@ public class ScripPlayerController : MonoBehaviour
                     break;
 
                 default:
+
+                case "weapon 2":
+                   
+                    
+                    weaponID = 1;
+                    shotSpeed = 15000;
+                    fireMode = 0;
+                    fireRate = 0.5f;
+                    currentClip = 10;
+                    clipSize = 10;
+                    maxAmmo = 150;
+                    currentAmmo = 150;
+                    reloadAmt = 10;
+                    shotLifeSpan = 1;
                     break;
+
             }
         }
 
@@ -238,6 +253,11 @@ public class ScripPlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
 
+        }
+
+        if (collision.gameObject.tag == "Next level")
+        {
+            gm.Loadlevel(2);
         }
     }
 
