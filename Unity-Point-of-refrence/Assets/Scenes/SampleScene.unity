@@ -5705,6 +5705,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6592928430313316995, guid: f94b530846b8e5c42bf2505c22b4166a, type: 3}
+      propertyPath: jumpHeight
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592928430313316995, guid: f94b530846b8e5c42bf2505c22b4166a, type: 3}
+      propertyPath: groundDetectDistance
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
