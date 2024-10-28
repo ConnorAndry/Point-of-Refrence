@@ -155,6 +155,9 @@ public class ScripPlayerController : MonoBehaviour
             }
 
             myRB.velocity = (temp.x * transform.forward) + (temp.z * transform.right) + (temp.y * transform.up);
+
+            if (health <= 0)
+                gm.Loadlevel(0);
         }
     }
 
