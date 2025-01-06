@@ -26,6 +26,7 @@ public class ScripPlayerController : MonoBehaviour
     public int healthRestore = 5;
     public int healthAdd = 10;
     public bool inAir = true;
+    public int keyPoint = 0;
 
     [Header("Weapon Stats")]
     public AudioSource weaponSpeaker;
@@ -252,7 +253,13 @@ public class ScripPlayerController : MonoBehaviour
             health -= 5;
         }
 
-        if (collision.gameObject.tag == "door")
+        if (collision.gameObject.tag == "key")
+        {
+            keyPoint += 1;
+            Destroy(collision.gameObject);
+        }
+
+        if ((keyPoint == 1) && collision.gameObject.tag == "door")
         {
             Destroy(collision.gameObject);
 
@@ -261,6 +268,7 @@ public class ScripPlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Next level")
         {
             gm.Loadlevel(2);
+            keyPoint = 0;
         }
     }
 
