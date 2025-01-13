@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -53,5 +54,7 @@ public class BossController : MonoBehaviour
 
             collision.gameObject.transform.SetParent(GhostBoss1);
         }
+
+       
     }
 }

@@ -3,20 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Health Pickup
-  - Weapon
-  - Shot
-  - basicEnamy
-  - Health buff
-  - Boss
-  - Wall
-  - Ammo Pickup
-  - door
-  - key
-  - Door Enamy
-  - Next level
-  - Gate
+  tags: []
   layers:
   - Default
   - TransparentFX
