@@ -1582,6 +1582,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6592928430313316995, guid: f94b530846b8e5c42bf2505c22b4166a, type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592928430313316995, guid: f94b530846b8e5c42bf2505c22b4166a, type: 3}
       propertyPath: groundDetectDistance
       value: 2
       objectReference: {fileID: 0}

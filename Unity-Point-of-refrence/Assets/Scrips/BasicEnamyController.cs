@@ -42,6 +42,7 @@ public class BasicEnamyController : MonoBehaviour
             Destroy(gameObject);
             GameObject p = Instantiate(Health, Enemy1.position, Enemy1.rotation);
             GameObject a = Instantiate(Ammo, Enemy1.position, Enemy1.rotation);
+            
         }
 
 
@@ -74,6 +75,7 @@ public class BasicEnamyController : MonoBehaviour
             collision.gameObject.transform.SetParent(Enemy1);
         }
 
+       
         
     }
 

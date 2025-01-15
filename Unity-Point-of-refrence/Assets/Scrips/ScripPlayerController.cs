@@ -16,6 +16,8 @@ public class ScripPlayerController : MonoBehaviour
 
     public GameManager gm;
 
+    public BasicEnamyController bec;
+
     public AudioSource pickupSpeaker;
 
     public int damageRecieved = 1;
@@ -53,7 +55,7 @@ public class ScripPlayerController : MonoBehaviour
     public float CurrentClip2 = 0;
 
     [Header("Movement Settings")]
-    public float speed = 10.0f;
+    public float speed = 6.0f;
     public float jumpHeight = 5.0f;
     public float SprintMultplyer = 2.5f;
     public float groundDetectDistance = 4.25f;
@@ -263,6 +265,16 @@ public class ScripPlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
 
+        }
+
+        if ((bec.health <= 0) && collision.gameObject.tag == "Gate")
+        {
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "kill")
+        {
+            gm.RestartLevel();
         }
 
         if (collision.gameObject.tag == "Next level")

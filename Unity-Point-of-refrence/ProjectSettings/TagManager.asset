@@ -17,6 +17,8 @@ TagManager:
   - Door Enamy
   - Next level
   - Gate
+  - kill
+  - Platform
   layers:
   - Default
   - TransparentFX

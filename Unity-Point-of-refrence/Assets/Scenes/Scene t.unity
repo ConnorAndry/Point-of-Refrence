@@ -1176,7 +1176,7 @@ Transform:
   m_GameObject: {fileID: 83688016}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.304234, y: 1.9662943, z: 62.711464}
+  m_LocalPosition: {x: -55.83, y: 1.9662943, z: 62.711464}
   m_LocalScale: {x: 3, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 71226664cbe9d2b4d8d28b10dbff854f, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &87703066
 GameObject:
@@ -1494,7 +1494,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1343830866}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -11298,6 +11298,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1343830866}
     - target: {fileID: 6592928430313316995, guid: f94b530846b8e5c42bf2505c22b4166a, type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592928430313316995, guid: f94b530846b8e5c42bf2505c22b4166a, type: 3}
       propertyPath: pickupSpeaker
       value: 
       objectReference: {fileID: 1709655615}
@@ -11525,7 +11529,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1343830866}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Loadlevel
         m_Mode: 3
@@ -12467,7 +12471,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1343830866}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
@@ -13095,7 +13099,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1343830866}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -13920,12 +13924,10 @@ SceneRoots:
   - {fileID: 754035753}
   - {fileID: 1317486336}
   - {fileID: 1342904109}
-  - {fileID: 748342605}
   - {fileID: 430829883}
   - {fileID: 272173206}
   - {fileID: 2017666675}
   - {fileID: 1629522312}
-  - {fileID: 1343830867}
   - {fileID: 1734598096}
   - {fileID: 1362982776}
   - {fileID: 853447882}
@@ -13938,3 +13940,5 @@ SceneRoots:
   - {fileID: 348587770}
   - {fileID: 98488025}
   - {fileID: 1709655616}
+  - {fileID: 1343830867}
+  - {fileID: 748342605}
