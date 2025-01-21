@@ -5710,6 +5710,17 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 55296fa63a3260641bff9459e6c2c1b6, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &2055171234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6495577775282590120, guid: 268fed6b1e8c5c248bc050122cd67d8d, type: 3}
+  m_PrefabInstance: {fileID: 795281493}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a49d4d280a227749b4df97cca681949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2029947905925526667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5762,6 +5773,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6592928430313316995, guid: f94b530846b8e5c42bf2505c22b4166a, type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 942690399}
+    - target: {fileID: 6592928430313316995, guid: f94b530846b8e5c42bf2505c22b4166a, type: 3}
+      propertyPath: bec
+      value: 
+      objectReference: {fileID: 2055171234}
     - target: {fileID: 6592928430313316995, guid: f94b530846b8e5c42bf2505c22b4166a, type: 3}
       propertyPath: speed
       value: 6
