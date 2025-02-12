@@ -18,6 +18,8 @@ public class ScripPlayerController : MonoBehaviour
 
     public BasicEnamyController bec;
 
+    public BossController bc;
+
     public AudioSource pickupSpeaker;
 
     public int damageRecieved = 1;
@@ -67,6 +69,7 @@ public class ScripPlayerController : MonoBehaviour
     public float Xsensitivity = 2.0f;
     public float Ysensitivity = 2.0f;
     public float camRotationLimit = 90f;
+    public float kill = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -264,6 +267,7 @@ public class ScripPlayerController : MonoBehaviour
         if ((keyPoint == 1) && collision.gameObject.tag == "door")
         {
             Destroy(collision.gameObject);
+            keyPoint = 0;
 
         }
 
@@ -274,7 +278,13 @@ public class ScripPlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "kill")
         {
+            kill += 1;
             gm.RestartLevel();
+        }
+
+        if ((bc.health <= 0) && collision.gameObject.tag == "Gate")
+        {
+            Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "Next level")

@@ -19,6 +19,13 @@ TagManager:
   - Gate
   - kill
   - Platform
+  - Gravity lever
+  - Gravity destroy
+  - Gravity fall
+  - Gravity trigger
+  - Geravity door
+  - Children
+  - Children1
   layers:
   - Default
   - TransparentFX
